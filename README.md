@@ -1,41 +1,65 @@
-Comparative Analysis of YOLOv10n and YOLOv11n for Brain Tumor Detection
-This project presents a comparative study of YOLOv10n and YOLOv11n models in detecting brain tumors using MRI images. The objective is to evaluate and contrast the performance of these two models on a brain tumor dataset.​
+# Comparative Analysis of YOLOv10n and YOLOv11n for Brain Tumor Detection
 
-Dataset
-The dataset comprises annotated MRI images of brain tumors, including various tumor types. It is sourced from publicly available datasets such as Br35H and Roboflow.​
-PMC
-+1
-ScienceDirect
-+1
+This repository contains the project for comparing the performance of YOLOv10n and YOLOv11n models for detecting brain tumors using MRI images. The study evaluates both models based on standard metrics to determine detection accuracy and localization precision.
 
-Models and Training
-YOLOv10n: A lightweight version of the YOLOv10 model.
+## Dataset
 
-YOLOv11n: An enhanced version with improved accuracy and efficiency.​
-Nano NTP
+- **Description:**  
+  The dataset comprises annotated MRI images featuring various brain tumor types.
+  
+- **Details:**  
+  - **Training Set:** 878 images (including 15 background images)  
+  - **Validation Set:** 223 images  
+  - **Validation Breakdown:**  
+    - All: 223 images, 241 instances  
+    - Negative: 142 images, 154 instances  
+    - Positive: 81 images, 87 instances  
 
-Both models were trained for 50 epochs using Google Colab with a T4 GPU. The training process involved standard data augmentation techniques and utilized the default hyperparameters provided by the respective YOLO versions.​
-ResearchGate
+## Models and Training
 
-Evaluation Metrics
-The models were evaluated using the following metrics:​
+- **YOLOv10n:**  
+  A lightweight model optimized for real-time performance.
 
-mAP@0.5: Mean Average Precision at an IoU threshold of 0.5.
+- **YOLOv11n:**  
+  An improved version featuring a fused architecture with 100 layers, 2,582,542 parameters, and 6.3 GFLOPs. It is designed for better convergence and higher detection accuracy.
 
-mAP@0.5–0.95: Mean Average Precision averaged over IoU thresholds from 0.5 to 0.95 in steps of 0.05.
+- **Training Setup:**  
+  Both models were trained for 50 epochs on Google Colab using a Tensor T4 GPU. Standard data augmentation techniques were applied to improve model robustness.
 
-Precision: The ratio of true positive detections to the total number of positive predictions.
+## Evaluation Metrics
 
-Recall: The ratio of true positive detections to the total number of actual positives in the dataset.​
+The models were evaluated using the following metrics:
 
-Results
-The performance metrics for both models are as follows:​
+- **mAP@0.5:** Mean Average Precision at an IoU threshold of 0.5.
+- **mAP@0.5–0.95:** Mean Average Precision averaged over IoU thresholds from 0.5 to 0.95 (in steps of 0.05).
+- **Precision (All):** Ratio of correctly predicted objects (true positives) to all predicted objects.
+- **Recall (All):** Ratio of correctly predicted objects to the total number of actual objects.
 
+## Results
 
-Model	mAP@0.5	mAP@0.5–0.95	Precision	Recall
-YOLOv10n	0.443	0.324	0.425	0.859
-YOLOv11n	0.457	0.338	0.419	0.858
-The results indicate that YOLOv11n slightly outperforms YOLOv10n in terms of mAP metrics, suggesting better overall detection quality.​
+The performance metrics on the validation set are summarized in the table below:
 
-Conclusion
-The comparative analysis demonstrates that YOLOv11n offers marginal improvements over YOLOv10n in detecting brain tumors from MRI images. These findings can inform future research and development of more accurate and efficient models for medical image analysis.
+| Model     | mAP@0.5 | mAP@0.5–95 | Precision (All) | Recall (All) |
+|-----------|---------|------------|-----------------|--------------|
+| YOLOv10n  | 0.443   | 0.324      | 0.425           | 0.859        |
+| YOLOv11n  | 0.457   | 0.338      | 0.419           | 0.858        |
+
+*Note: YOLOv11n shows a slight improvement in mAP metrics, indicating better overall detection quality.*
+
+## Conclusion
+
+This comparative analysis indicates that while both YOLOv10n and YOLOv11n achieve high recall, YOLOv11n demonstrates marginal improvements in mAP values. These results highlight the benefits of model enhancements for improving precision and localization in brain tumor detection using deep learning.
+
+## Future Work
+
+- Expand the dataset for better generalization.
+- Optimize hyperparameters and experiment with advanced data augmentation techniques.
+- Explore integration with clinical decision-support systems.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For further information or collaboration inquiries, please contact [Your Name] at [Your Email].

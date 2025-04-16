@@ -50,16 +50,3 @@ The performance metrics on the validation set are summarized in the table below:
 
 This comparative analysis indicates that while both YOLOv10n and YOLOv11n achieve high recall, YOLOv11n demonstrates marginal improvements in mAP values. These results highlight the benefits of model enhancements for improving precision and localization in brain tumor detection using deep learning.
 
-## Future Work
-
-- Expand the dataset for better generalization.
-- Optimize hyperparameters and experiment with advanced data augmentation techniques.
-- Explore integration with clinical decision-support systems.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-For further information or collaboration inquiries, please contact [Your Name] at [Your Email].
